@@ -19,9 +19,9 @@ function Users() {
   }, [])
 
   return (
-    <div className="MainDiv" >
-
+    <div style={{ marginBottom: '4em', marginTop: '0' }} >
       <div className="container">
+        <h1 style={styles.hea}>Users Details</h1>
         <table id="example" className="display table" >
           <thead className="thead-dark">
             <tr>
@@ -55,9 +55,11 @@ function Users() {
   );
 }
 
-
-
-
+const styles = {
+  hea: {
+    color: "#7DEDFF"
+  }
+}
 
 
 
