@@ -29,9 +29,9 @@ function ElevationScroll(props) {
 const useStyles = makeStyles(theme => ({
     toolbarMargin: {
         ...theme.mixins.toolbar,
-        marginBottom: '3em',
+        marginBottom: '1em',
         [theme.breakpoints.down('md')]: {
-            marginBottom: '2em'
+            marginBottom: '1em'
         },
         [theme.breakpoints.down('xs')]: {
             marginBottom: '1.25em'
@@ -69,7 +69,7 @@ const useStyles = makeStyles(theme => ({
         marginRight: '50px',
         height: '45px',
         '&:hover': {
-            backgroundColor: theme.palette.secondary.light
+            backgroundColor: theme.palette.secondary.blue
         }
     },
     // menu:{
@@ -119,7 +119,7 @@ const useStyles = makeStyles(theme => ({
     },
     drawerItemSelected: {
         '& .MuiListItemText-root': {
-            opacity: 1
+            opacity: 0
         }
 
     },

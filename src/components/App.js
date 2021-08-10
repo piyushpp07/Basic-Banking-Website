@@ -7,14 +7,14 @@ import theme from "./ui/Theme";
 import Users from './Users';
 import CreateUser from './CreateUser';
 import AllTransactions from './AllTransactions';
-import { Button, CardGroup, Card, Carousel } from 'react-bootstrap';
+import { Button, Carousel } from 'react-bootstrap';
 import AboutUs from './Aboutus'
 import StickyFooter from './ui/footer';
 import { Link } from 'react-router-dom';
 const LandingPage = () => {
   return (
-    <div className="MainDiv">
-
+    <div style={{ marginBottom: '3em', marginTop: '0' }}>
+      <h1 style={styles.hea}>𝕎𝕖𝕝𝕔𝕠𝕞𝕖 𝕥𝕠 𝔹𝕒𝕟𝕜</h1>
       <Carousel variant="dark">
         <Carousel.Item>
           <img
@@ -78,6 +78,7 @@ function App() {
   const [value, setValue] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(0)
   return (
+
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Header value={value}
@@ -85,6 +86,7 @@ function App() {
           selectedIndex={selectedIndex}
           setSelectedIndex={setSelectedIndex}
         />
+
         <Switch>
           <Route exact path='/' component={LandingPage} />
           <Route exact path='/createUser' component={CreateUser} />
@@ -102,6 +104,9 @@ function App() {
   );
 }
 const styles = {
+  hea: {
+    color: "#7DEDFF",
+  },
   image: {
     height: 200,
     width: 300,

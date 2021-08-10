@@ -1,61 +1,44 @@
-
-import React from 'react';
-import { MDBBtn } from 'mdbreact';
+import React, { Component } from 'react'
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
+import { withStyles } from '@material-ui/core/styles';
+import { makeStyles, Link } from '@material-ui/core';
 
-function Copyright() {
-    return (
-        <div>
-            <Typography variant="body2" color="textSecondary">
-                Project by : Piyush Paradkar
-            </Typography>
-            <Typography variant="body2" color="textSecondary">
-                {'Copyright © '}
-                <Link color="inherit" href="www.techwanderer.xyz">
-                    techwanderer.xyz
-                </Link>{' '}
-                {new Date().getFullYear()}
-                {'.'}
-            </Typography>
 
-        </div>
-    );
-}
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
-        minWidth: '100%'
-    },
-    main: {
-        marginTop: theme.spacing(8),
-        marginBottom: theme.spacing(2),
-    },
+const useStyles = makeStyles(theme => ({
     footer: {
-        padding: theme.spacing(3, 2),
-        marginTop: 'auto',
-        backgroundColor:
-            "#7DEDFF",
+        background: theme.palette.common.blue,
+        top: "auto",
+        bottom: "0px",
     },
-}));
+    center: {
+        margin: "0 auto"
+    },
+}))
 
 export default function StickyFooter() {
     const classes = useStyles();
 
     return (
-
-
-        <footer className={classes.footer}>
-            <Container maxWidth="sm">
-                <Copyright />
-            </Container>
-
-        </footer>
-
-    );
+        <div>
+            <AppBar className={classes.footer}>
+                <Toolbar className={classes.center} >
+                    <div>
+                        <Typography variant="body2" style={{ color: 'black', textAlign: 'center' }}>
+                            Project Made By Piyush Paradkar
+                        </Typography>
+                        <Typography variant="body2" style={{ color: 'black', textAlign: 'center' }}>
+                            {'Copyright © '}
+                            <Link color="inherit" href="https://www.techwanderer.xyz">
+                                techwanderer.xyz
+                            </Link>{' '}
+                            {new Date().getFullYear()}
+                            {'.'}
+                        </Typography>
+                    </div>
+                </Toolbar>
+            </AppBar>
+        </div>
+    )
 }
