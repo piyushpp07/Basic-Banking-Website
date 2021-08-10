@@ -249,9 +249,9 @@ export default function Header(props) {
                         }}
                         onClick={() => {
                             setOpenDrawer(false);
-                            props.setValue(5)
+                            props.setValue(4)
                         }}
-                        selected={props.value === 5}
+                        selected={props.value === 4}
                     >
                         <ListItemText
                             className={classes.drawerItem}
