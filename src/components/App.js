@@ -10,7 +10,7 @@ import AllTransactions from './AllTransactions';
 import { Button, Carousel } from 'react-bootstrap';
 import AboutUs from './Aboutus'
 import StickyFooter from './ui/footer';
-import { Link } from 'react-router-dom';
+import { Link } from '@material-ui/core';
 const LandingPage = () => {
   return (
     <div style={{ marginBottom: '3em', marginTop: '0' }}>

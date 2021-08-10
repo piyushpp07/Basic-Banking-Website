@@ -93,10 +93,10 @@ export default createTheme({
       },
       underline: {
         "&:before": {
-          borderBottom: `2px solid ${arcBlue}`
+          borderBottom: `2px solid ${arcGrey}`
         },
         "&:hover:not($disabled):not($focused):not($error):before": {
-          borderBottom: `2px solid ${arcBlue}`
+          borderBottom: `2px solid ${arcGrey}`
         }
       }
     }

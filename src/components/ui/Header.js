@@ -61,15 +61,16 @@ const useStyles = makeStyles(theme => ({
         minWidth: 10,
         marginLeft: '25px'
 
+
     },
     button: {
         ...theme.typography.estimate,
-        borderRadius: '50px',
+        borderRadius: '0px',
         marginLeft: '50px',
         marginRight: '50px',
         height: '45px',
         '&:hover': {
-            backgroundColor: theme.palette.secondary.blue
+            backgroundColor: theme.palette.common.arcBlue
         }
     },
     // menu:{
@@ -107,19 +108,19 @@ const useStyles = makeStyles(theme => ({
         }
     },
     drawer: {
-        backgroundColor: theme.palette.common.black
+        backgroundColor: theme.palette.common.blue
     },
     drawerItem: {
         ...theme.typography.tab,
         color: 'white',
-        opacity: 0.7
+        opacity: 0.5
     },
     drawerItemEstimate: {
-        backgroundColor: theme.palette.common.orange
+        backgroundColor: theme.palette.common.arcGrey
     },
     drawerItemSelected: {
         '& .MuiListItemText-root': {
-            opacity: 0
+            opacity: 1
         }
 
     },
@@ -179,7 +180,7 @@ export default function Header(props) {
                 indicatorColor='primary'
             >
                 {routes.map((route, index) => (
-                    <Tab
+                    <Tab style={{ color: "white" }}
                         key={`${route}${index}`}
                         className={classes.tab}
                         component={Link}
