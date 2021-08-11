@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,7 +18,7 @@ function Users() {
   }, [])
 
   return (
-    <div style={{ marginBottom: '4em', marginTop: '0' }} >
+    <div style={{ marginBottom: '5em', marginTop: '0' }} >
       <div className="container">
         <h1 style={styles.hea}>Users Details</h1>
         <table id="example" className="display table" >

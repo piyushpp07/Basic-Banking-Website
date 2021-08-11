@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { db } from '../firebase';
 import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { TextField, Typography, Grid, useMediaQuery, useTheme } from "@material-ui/core";
@@ -17,13 +16,13 @@ export default function Transfer() {
     const theme = useTheme();
     const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
     const matchesMD = useMediaQuery(theme.breakpoints.down('md'))
-    const matchesXS = useMediaQuery(theme.breakpoints.down('xs'))
+
     const [sender, setSender] = useState("");
     let [reciver, setReciver] = useState("");
     const [amt, setAmt] = useState(0);
     const [status, setStatus] = useState("done");
     const [posts, setPosts] = useState([]);
-    const [time, setTime] = useState(toString(new Date().toLocaleString()));
+
     useEffect(() => {
         const getDataFromFirebase = [];
         const subscriber = db.collection('students-list').onSnapshot((querySnapshot) => {
@@ -55,9 +54,9 @@ export default function Transfer() {
     const transferMoney = async (e) => {
 
         e.preventDefault();
-        var rusr = posts.filter(p => { return p.email == reciver });
-        var susr = posts.filter(p => { return p.email == sender });
-        if (susr[0].email == rusr[0].email) {
+        var rusr = posts.filter(p => { return p.email === reciver });
+        var susr = posts.filter(p => { return p.email === sender });
+        if (susr[0].email === rusr[0].email) {
             alert("both Sender and Reciver Cant Be same")
 
         } else if (parseFloat(susr[0].Amount) < parseFloat(amt)) {
@@ -159,8 +158,8 @@ export default function Transfer() {
                             <Button
                                 disabled={
                                     reciver.length === 0 ||
-                                    sender.length === 0 ||
-                                    amt.length === 0
+                                    sender.length === 0
+
                                 }
 
                                 variant='primary'

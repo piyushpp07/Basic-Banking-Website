@@ -1,62 +1,101 @@
-import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faYoutube,
-    faFacebook,
-    faTwitter,
-    faInstagram
-} from "@fortawesome/free-brands-svg-icons";
-export default function AboutUs() {
-    return (
-        <div className="MainDiv">
-            <div className="container">
-                <div className="row featurette" d-flex="" justify-content-center="">
-                    <div className="col-md-7">
-                        <h2 className="featurette-heading">Hello Everyone,<span className="text-muted"></span></h2>
-                        <p className="lead"> I am Piyush Paradkar I am currently persuing computer science engineering form LNCT Bhopal currently I am in 3rd year .I am currently working on web development I have good knowledge about data structures and algorithms  and some programming languages like C++ , Python ,JavaScript . </p>
-                        <h2 className="featurette-heading">Connect me<span className="text-muted"></span></h2>
-                        <div >
-                            <span>
-                                <a href="https://www.youtube.com/channel/UC8q49GXf7bPlJOwsU3In6jA"
-                                    className="youtube social">
-                                    <FontAwesomeIcon icon={faYoutube} size="2x" />
-                                </a>
-                            </span>
+import { Grid, makeStyles, Typography, useTheme, useMediaQuery, Button } from '@material-ui/core';
+import { GitHub, LinkedIn, Twitter } from '@material-ui/icons';
+import React from 'react';
 
-                            <span>
-                                <a href="https://m.facebook.com/100066435712972/"
-                                    className="facebook social">
-                                    <FontAwesomeIcon icon={faFacebook} size="2x" />
-                                </a>
-                            </span>
-                            <span>
-                                <a href="https://www.instagram.com/piyushp_007/"
-                                    className="instagram social">
-                                    <FontAwesomeIcon icon={faInstagram} size="2x" />
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                    <br></br>
-                    <div className="col-md-2">
-                        <br></br>
-                        <img
-                            className="w-1000"
-                            src="https://scontent.fbho4-2.fna.fbcdn.net/v/t1.6435-9/230187873_168733375351185_5063258339636921753_n.jpg?_nc_cat=101&ccb=1-4&_nc_sid=09cbfe&_nc_ohc=4ZuwYFBqwKkAX9sddc3&_nc_ht=scontent.fbho4-2.fna&oh=8b6dd5f10d2f264fdb92b3e060a8def6&oe=613810D9"
-                            alt="First slide"
-                            style={styles.image}
-                        />
 
-                    </div>
-                </div>
-            </div>
-        </div >
-    )
-}
-const styles = {
-    image: {
-        height: 200,
-        width: 290,
+const useStyles = makeStyles(theme => ({
+    missionStatement: {
+        fontStyle: "italic",
+        fontWeight: 300,
+        fontSize: "1.5rem",
+        maxWidth: "50em",
+        lineHeight: 1.4
+    },
+    rowContainer: {
+        paddingLeft: "5em",
+        paddingRight: "5em",
+        [theme.breakpoints.down("sm")]: {
+            paddingLeft: "1.5em",
+            paddingRight: "1.5em"
+        }
+    },
+    avatar: {
+        height: "15em",
+        width: "15em",
+        [theme.breakpoints.down("sm")]: {
+            height: "15em",
+            width: "15em",
+            maxHeight: 300,
+            maxWidth: 300
+        }
     }
+}))
+
+
+
+export default function AboutUs(props) {
+    const classes = useStyles();
+    const theme = useTheme();
+    const matchesMD = useMediaQuery(theme.breakpoints.down('md'))
+    return (
+        <Grid container direction='column'>
+            <Grid item className={classes.rowContainer} style={{ marginTop: matchesMD ? '1em' : '1em' }}>
+                <Typography align='center' variant='h2'>
+                    About Me
+                </Typography>
+            </Grid>
+            <Grid
+                item
+                container
+                justifyContent='center'
+                className={classes.rowContainer}
+                style={{ marginTop: '3em' }}
+            >
+                <Typography variant='h4' align='center' className={classes.missionStatement}>
+                    Web developer with a strong interest in projects that require both conceptual and analytical thinking. Fully-committed to develop innovative applications that users will love. Always eager to learn more.
+                </Typography>
+            </Grid>
+            <Grid
+                item
+                container
+                direction='column'
+                className={classes.rowContainer}
+                alignItems='center'
+                style={{ marginBottom: '10em', marginTop: '3em' }}
+            >
+                <Grid item>
+                    <Typography variant='h4' gutterBottom align="center">
+                        Team
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <Typography variant="body1" paragraph align="center">
+                        Piyush Paradkar, Founder
+                    </Typography>
+                    <Typography variant="body1" paragraph align="center">
+                        Web Developer
+                    </Typography>
+                </Grid>
+                <Grid item>
+                    <Button
+                        style={{ color: "black" }}
+                        onClick={() => window.open("https://github.com/piyushpp07", '_blank')}
+                    >
+                        <GitHub />
+                    </Button>
+                    <Button style={{ color: "black" }}
+                        onClick={() => window.open("https://twitter.com/PiyushParadkar9", '_blank')}
+                    >
+                        <Twitter />
+                    </Button>
+                    <Button style={{ color: "black" }}
+                        onClick={() => window.open("https://www.linkedin.com/in/piyush-paradkar-61a2a11b1/", '_blank')}
+                    >
+                        <LinkedIn />
+                    </Button>
+                </Grid>
+
+            </Grid>
+        </Grid>
+    )
 }

@@ -10,24 +10,25 @@ import AllTransactions from './AllTransactions';
 import { Button, Carousel } from 'react-bootstrap';
 import AboutUs from './Aboutus'
 import StickyFooter from './ui/footer';
-import { Link } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 const LandingPage = () => {
+
   return (
-    <div style={{ marginBottom: '3em', marginTop: '0' }}>
-      <h1 style={styles.hea}>𝕎𝕖𝕝𝕔𝕠𝕞𝕖 𝕥𝕠 𝔹𝕒𝕟𝕜</h1>
+    <div style={{ marginBottom: '1em', marginTop: '0.1em' }}>
+
       <Carousel variant="dark">
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://paysend.com/images/BL019_01_credit_1200.png"
+            src="https://images.unsplash.com/photo-1537724326059-2ea20251b9c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1655&q=80"
             alt="First slide"
             style={styles.image1}
           />
           <Carousel.Caption>
-            <h5>Send Money</h5>
-            <p>Transfer money from your existing Account</p>
+            <h5 style={{ color: `#9AB3F5` }}>Send Money</h5>
+            <p style={{ color: `#9AB3F5` }}>Transfer money from your existing Account</p>
             <Link to="/Transfer">
-              <Button renderas="button" variant="danger">
+              <Button renderas="button" style={{ backgroundColor: `#0F4C75`, color: `#B9FFFC` }}>
                 <span>Transfer Money</span>
               </Button>
             </Link>
@@ -36,15 +37,15 @@ const LandingPage = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://www.investopedia.com/thmb/DTr-SL4TLMIBpJOD1564wNW-OjI=/1254x837/filters:fill(auto,1)/iStock-682395884.tashka2000.online.banking-5c6c9639c9e77c00018ccac8.jpg"
+            src="https://osome.com/content/images/2020/10/Osome-SG-Electronics-Transaction-Act.png"
             alt="Second slide"
             style={styles.image1}
           />
           <Carousel.Caption>
-            <h5>Create New Account</h5>
-            <p>Create new account to avail all facilities</p>
+            <h5 style={{ color: `black` }}>Create New Account</h5>
+            <p style={{ color: `black` }}>Create new account to avail all facilities</p>
             <Link to="/CreateUser">
-              <Button renderas="button" variant="success">
+              <Button renderas="button" style={{ backgroundColor: `#88FFF7`, color: `#5C33F6` }} >
                 <span>Create Account</span>
               </Button>
             </Link>
@@ -53,15 +54,16 @@ const LandingPage = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://osome.com/content/images/2020/10/Osome-SG-Electronics-Transaction-Act.png"
+
+            src="https://images.unsplash.com/photo-1622630998477-20aa696ecb05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1632&q=80"
             alt="Third slide"
             style={styles.image1}
           />
           <Carousel.Caption>
-            <h5>Transactions</h5>
-            <p>Show Previous Transactions done</p>
+            <h5 style={{ color: `white` }}>Transactions</h5>
+            <p style={{ color: `white` }}>Show Previous Transactions done</p>
             <Link to="/AllTransactions">
-              <Button renderas="button" variant="warning">
+              <Button renderas="button" style={{ backgroundColor: `#88FFF7`, color: `#5C33F6` }}>
                 <span>Show Transactions</span>
               </Button>
             </Link>

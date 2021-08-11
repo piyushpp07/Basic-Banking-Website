@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Button, IconButton, List, ListItem, Menu, MenuItem, Tab, Tabs } from '@material-ui/core';
+import { AppBar, Button, IconButton, List, ListItem, Tab, Tabs } from '@material-ui/core';
 import Toolbar from '@material-ui/core/Toolbar';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import { makeStyles } from '@material-ui/styles';
@@ -37,22 +37,7 @@ const useStyles = makeStyles(theme => ({
             marginBottom: '1.25em'
         }
     },
-    logo: {
-        height: '8em',
-        [theme.breakpoints.down('md')]: {
-            height: '7em'
-        },
-        [theme.breakpoints.down('xs')]: {
-            height: '5.5em'
-        }
 
-    },
-    logoContainer: {
-        padding: 0,
-        "&:hover": {
-            backgroundColor: 'transparent'
-        }
-    },
     tabContainer: {
         marginLeft: 'auto'
     },
@@ -85,18 +70,7 @@ const useStyles = makeStyles(theme => ({
     //         opacity:'1'
     //     }
     //},
-    menu: {
-        backgroundColor: theme.palette.common.black,
-        color: "white",
-        borderRadius: "0px"
-    },
-    menuItem: {
-        ...theme.typography.tab,
-        opacity: 0.7,
-        "&:hover": {
-            opacity: 1
-        }
-    },
+
     drawerIcon: {
         height: '50px',
         width: '50px'
@@ -169,7 +143,7 @@ export default function Header(props) {
             }
         }
         )
-    }, [props.value, props.selectedIndex, routes, props])
+    })
 
     const tabs = (
         <React.Fragment>
