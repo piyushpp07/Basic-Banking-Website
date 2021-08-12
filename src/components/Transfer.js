@@ -177,7 +177,7 @@ export default function Transfer() {
 }
 const Styles = {
     hea: {
-        color: "#7DEDFF",
+        color: "#5C527F",
 
     },
 }

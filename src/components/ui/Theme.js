@@ -1,8 +1,8 @@
-import { createTheme } from '@material-ui/core/styles';
+import { createTheme } from "@material-ui/core/styles";
 
-const arcOrange = '#88FFF7';
-const arcBlue = '#7DEDFF';
-const arcGrey = '#88FFF7'
+const arcOrange = "#261C2C";
+const arcBlue = "#5C527F";
+const arcGrey = "#5C527F";
 
 export default createTheme({
   palette: {
@@ -19,22 +19,22 @@ export default createTheme({
   },
   typography: {
     tab: {
-      fontFamily: 'Raleway',
-      textTransform: 'none',
+      fontFamily: "Raleway",
+      textTransform: "none",
       fontWeight: 700,
-      fontSize: '1rem',
-      color: 'black'
+      fontSize: "1rem",
+      color: "black"
     },
     estimate: {
-      fontFamily: 'Pacifico',
-      fontSize: '1rem',
-      textTransform: 'none',
-      color: 'white'
+      fontFamily: "Pacifico",
+      fontSize: "1rem",
+      textTransform: "none",
+      color: "white"
     },
     h2: {
-      fontFamily: 'Raleway',
+      fontFamily: "Raleway",
       fontWeight: 700,
-      fontSize: '2.5rem',
+      fontSize: "2.5rem",
       color: arcBlue,
       lineHeight: 1.5
     },
@@ -44,13 +44,13 @@ export default createTheme({
       color: arcBlue
     },
     h4: {
-      fontFamily: 'Raleway',
-      fontSize: '1.75rem',
+      fontFamily: "Raleway",
+      fontSize: "1.75rem",
       color: arcBlue,
       fontWeight: 700
     },
     subtitle1: {
-      fontSize: '1.25rem',
+      fontSize: "1.25rem",
       fontWeight: 300,
       color: arcGrey
     },
@@ -83,7 +83,7 @@ export default createTheme({
     MuiInputLabel: {
       root: {
         color: arcBlue,
-        fontSize: '1rem'
+        fontSize: "1rem"
       }
     },
     MuiInput: {
